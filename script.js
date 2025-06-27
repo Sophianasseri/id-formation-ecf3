@@ -1,5 +1,6 @@
 const nav = document.querySelector(".nav-links")
 const menu = document.querySelector(".burger")
+const links = document.querySelectorAll(".menu-link")
 const main = document.querySelector('main')
 const slider = document.querySelector('.recipes-section')
 const cards = Array.from(slider.children);
@@ -10,6 +11,14 @@ menu.addEventListener("click",() => {
 nav.classList.toggle("active")
 main.classList.toggle('active');
 })
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    main.classList.toggle('active');
+
+  });
+});
 
 //Défilement carrousel "ondrag"
 
